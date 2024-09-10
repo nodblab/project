@@ -1,1 +1,27 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    
+    <h1>Welcome to the Home Page</h1>
+    
+    <script>
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        }
+
+        window.onload = loadNavbar;
+    </script>
+</body>
+</html>
